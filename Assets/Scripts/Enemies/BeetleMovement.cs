@@ -21,7 +21,9 @@ public class BeetleMovement : MonoBehaviour
     void Update()
     {
         if (enemyDie.notTriggeredYet)
+        {
             this.transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        }
         else
             this.transform.position = this.transform.position; //Para o movimento.
     }

@@ -482,6 +482,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &849357232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849357234}
+  - component: {fileID: 849357235}
+  m_Layer: 0
+  m_Name: BigEyeSpawner
+  m_TagString: BigEyeSpawner
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &849357234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849357232}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.091689, y: -4.11, z: 0.045054384}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849357235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849357232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db96f3adf89331842a3d20af425c4e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limitYInitialValue: 2.23
+  limitYFinalValue: -2.64
+  beetlePrefab: {fileID: 0}
+  bigEyePrefab: {fileID: 7759355319239305462, guid: 9ceda2319de36394babbe132c2684527, type: 3}
 --- !u!1 &862942737
 GameObject:
   m_ObjectHideFlags: 0
@@ -10431,7 +10479,7 @@ GameObject:
   - component: {fileID: 1692488384}
   m_Layer: 0
   m_Name: BeetleSpawner
-  m_TagString: EnemySpawner
+  m_TagString: BeetleSpawner
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10465,7 +10513,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limitYInitialValue: 3.91
   limitYFinalValue: -4.08
-  enemyPrefab: {fileID: 7982973398172979766, guid: d094fc80a6c3509439a55680c9bc3cbe, type: 3}
+  beetlePrefab: {fileID: 7982973398172979766, guid: d094fc80a6c3509439a55680c9bc3cbe, type: 3}
+  bigEyePrefab: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10477,3 +10526,4 @@ SceneRoots:
   - {fileID: 1186224964}
   - {fileID: 983372307}
   - {fileID: 1692488383}
+  - {fileID: 849357234}

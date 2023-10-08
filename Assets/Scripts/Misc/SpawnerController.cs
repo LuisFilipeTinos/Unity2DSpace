@@ -11,7 +11,10 @@ public class SpawnerController : MonoBehaviour
     float limitYFinalValue;
 
     [SerializeField]
-    GameObject enemyPrefab;
+    GameObject beetlePrefab;
+
+    [SerializeField]
+    GameObject bigEyePrefab;
 
     float timer;
 
@@ -26,12 +29,22 @@ public class SpawnerController : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (this.gameObject.CompareTag("EnemySpawner") && timer >= 3f)
+        if (this.gameObject.CompareTag("BeetleSpawner") && timer >= 3f)
         {
             var randomYValue = Random.Range(limitYInitialValue, limitYFinalValue);
 
             //Instanciar o objeto.
-            var instantiatedObject = Instantiate(enemyPrefab, new Vector2(this.transform.position.x, randomYValue), Quaternion.identity);
+            var instantiatedObject = Instantiate(beetlePrefab, new Vector2(this.transform.position.x, randomYValue), Quaternion.identity);
+
+            //Zerar o meu timer.
+            timer = 0;
+        }
+        else if (this.gameObject.CompareTag("BigEyeSpawner") && timer >= 3.7f)
+        {
+            var randomYValue = Random.Range(limitYInitialValue, limitYFinalValue);
+
+            //Instanciar o objeto.
+            var instantiatedObject = Instantiate(bigEyePrefab, new Vector2(this.transform.position.x, randomYValue), Quaternion.identity);
 
             //Zerar o meu timer.
             timer = 0;
