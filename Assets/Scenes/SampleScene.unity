@@ -530,6 +530,7 @@ MonoBehaviour:
   limitYFinalValue: -2.64
   beetlePrefab: {fileID: 0}
   bigEyePrefab: {fileID: 7759355319239305462, guid: 9ceda2319de36394babbe132c2684527, type: 3}
+  demonSpawner: {fileID: 0}
 --- !u!1 &862942737
 GameObject:
   m_ObjectHideFlags: 0
@@ -10515,6 +10516,56 @@ MonoBehaviour:
   limitYFinalValue: -4.08
   beetlePrefab: {fileID: 7982973398172979766, guid: d094fc80a6c3509439a55680c9bc3cbe, type: 3}
   bigEyePrefab: {fileID: 0}
+  demonSpawner: {fileID: 0}
+--- !u!1 &1879089961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1879089963}
+  - component: {fileID: 1879089962}
+  m_Layer: 0
+  m_Name: DemonSpawner
+  m_TagString: DemonSpawner
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1879089962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879089961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db96f3adf89331842a3d20af425c4e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limitYInitialValue: 2.23
+  limitYFinalValue: -2.64
+  beetlePrefab: {fileID: 0}
+  bigEyePrefab: {fileID: 0}
+  demonSpawner: {fileID: 2396925320700942305, guid: 7f728e5e8839913419ae393809359d44, type: 3}
+--- !u!4 &1879089963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879089961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.091689, y: -4.11, z: 0.045054384}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10527,3 +10578,4 @@ SceneRoots:
   - {fileID: 983372307}
   - {fileID: 1692488383}
   - {fileID: 849357234}
+  - {fileID: 1879089963}

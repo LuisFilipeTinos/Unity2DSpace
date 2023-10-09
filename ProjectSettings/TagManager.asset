@@ -9,6 +9,7 @@ TagManager:
   - BeetleSpawner
   - DemonSpawner
   - BigEyeSpawner
+  - DemonEnemy
   layers:
   - Default
   - TransparentFX

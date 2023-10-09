@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BigEyeMovement : MonoBehaviour
 {
-    GameObject player;
-
     [SerializeField]
     float speed;
 
@@ -16,16 +14,13 @@ public class BigEyeMovement : MonoBehaviour
 
     Rigidbody2D rb2d;
 
-    Vector2 initialPos;
     float timer;
 
     private void Start()
     {
         timer = 0;
-        initialPos = this.transform.position;
         goingDown = true;
         enemyDie = GetComponent<EnemyDie>();
-        player = GameObject.Find("Player");
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -50,7 +45,11 @@ public class BigEyeMovement : MonoBehaviour
             }
         }
         else
+        {
             this.transform.position = this.transform.position; //Para o movimento.
+            rb2d.velocity = Vector2.zero;
+            rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
+        }
     }
 
     private void FixedUpdate()

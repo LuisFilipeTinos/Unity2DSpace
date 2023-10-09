@@ -16,6 +16,9 @@ public class SpawnerController : MonoBehaviour
     [SerializeField]
     GameObject bigEyePrefab;
 
+    [SerializeField]
+    GameObject demonSpawner;
+
     float timer;
 
     // Start is called before the first frame update
@@ -45,6 +48,16 @@ public class SpawnerController : MonoBehaviour
 
             //Instanciar o objeto.
             var instantiatedObject = Instantiate(bigEyePrefab, new Vector2(this.transform.position.x, randomYValue), Quaternion.identity);
+
+            //Zerar o meu timer.
+            timer = 0;
+        }
+        else if (this.gameObject.CompareTag("DemonSpawner") && timer >= 7f)
+        {
+            var randomYValue = Random.Range(limitYInitialValue, limitYFinalValue);
+
+            //Instanciar o objeto.
+            var instantiatedObject = Instantiate(demonSpawner, new Vector2(this.transform.position.x, randomYValue), Quaternion.identity);
 
             //Zerar o meu timer.
             timer = 0;
