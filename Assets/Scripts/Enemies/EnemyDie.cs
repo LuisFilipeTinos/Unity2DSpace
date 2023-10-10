@@ -42,6 +42,7 @@ public class EnemyDie : MonoBehaviour
     private async Task EnemyDeleted()
     {
         anim.Play("BeetleDying");
+        GameObject.Find("PointsManager").GetComponent<PointManager>().AddPoints(); // Adiciona pontos na UI
         await Awaitable.WaitForSecondsAsync(0.3f);
         var explosion = (GameObject)Instantiate(explosionRef);
         explosion.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
