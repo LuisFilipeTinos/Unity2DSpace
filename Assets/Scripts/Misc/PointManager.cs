@@ -23,4 +23,9 @@ public class PointManager : MonoBehaviour
         points += 50;
         textPoints.text = points.ToString();
     }
+
+    public int GetPoints()
+    {
+        return points;
+    }
 }
