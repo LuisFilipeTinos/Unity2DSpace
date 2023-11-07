@@ -36,56 +36,28 @@ public class SpawnerController : MonoBehaviour
         timer += Time.deltaTime;
 
         if (this.gameObject.CompareTag("BeetleSpawner") && timer >= 3f)
-        {
-            var randomYValue = Random.Range(limitYInitialValue, limitYFinalValue);
-
-            //Instanciar o objeto.
-            Instantiate(beetlePrefab, new Vector2(this.transform.position.x, randomYValue), Quaternion.identity);
-
-            if (pointManager.GetPoints() > 400)
-                StartCoroutine(WaitToInstantiate(beetlePrefab));
-                
-
-            if (pointManager.GetPoints() > 1500)
-                StartCoroutine(WaitToInstantiate(beetlePrefab));
-
-            //Zerar o meu timer.
-            timer = 0;
-        }
+            InstantiateEnemies(beetlePrefab);
         else if (this.gameObject.CompareTag("BigEyeSpawner") && timer >= 3.7f)
-        {
-            var randomYValue = Random.Range(limitYInitialValue, limitYFinalValue);
-
-            //Instanciar o objeto.
-            Instantiate(bigEyePrefab, new Vector2(this.transform.position.x, randomYValue), Quaternion.identity);
-
-            if (pointManager.GetPoints() > 400)
-                StartCoroutine(WaitToInstantiate(bigEyePrefab));
-
-
-            if (pointManager.GetPoints() > 1500)
-                StartCoroutine(WaitToInstantiate(bigEyePrefab));
-
-            //Zerar o meu timer.
-            timer = 0;
-        }
+            InstantiateEnemies(bigEyePrefab);
         else if (this.gameObject.CompareTag("DemonSpawner") && timer >= 7f)
-        {
-            var randomYValue = Random.Range(limitYInitialValue, limitYFinalValue);
+            InstantiateEnemies(demonPrefab);
+    }
 
-            //Instanciar o objeto.
-            Instantiate(demonPrefab, new Vector2(this.transform.position.x, randomYValue), Quaternion.identity);
+    private void InstantiateEnemies(GameObject prefab)
+    {
+        var randomYValue = Random.Range(limitYInitialValue, limitYFinalValue);
 
-            if (pointManager.GetPoints() > 400)
-                StartCoroutine(WaitToInstantiate(demonPrefab));
+        Instantiate(prefab, new Vector2(this.transform.position.x, randomYValue), Quaternion.identity);
+
+        if (pointManager.GetPoints() > 400)
+            StartCoroutine(WaitToInstantiate(prefab));
 
 
-            if (pointManager.GetPoints() > 1500)
-                StartCoroutine(WaitToInstantiate(demonPrefab));
+        if (pointManager.GetPoints() > 1500)
+            StartCoroutine(WaitToInstantiate(prefab));
 
-            //Zerar o meu timer.
-            timer = 0;
-        }
+        //Zerar o meu timer.
+        timer = 0;
     }
 
     private IEnumerator WaitToInstantiate(GameObject enemy)
