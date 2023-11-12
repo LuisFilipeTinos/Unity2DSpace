@@ -9,9 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float moveSpeed;
 
-    //Booleanas de controle de direção:
-    bool goingUp;
-    bool goingDown;
+    float verticalMovement;
+    Vector2 verticalVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -22,30 +21,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-            goingUp = true;
-            goingDown = false;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            goingDown = true;
-            goingUp = false;
-        }
-        else
-        {
-            goingDown = false;
-            goingUp = false;
-        }
+        verticalMovement = Input.GetAxisRaw("Vertical");
+        verticalVelocity = new Vector2(0, (verticalMovement * moveSpeed) * Time.deltaTime);
             
     }
 
     private void FixedUpdate()
     {
-        if (goingUp)
-            rb2d.velocity = new Vector2(0, moveSpeed * Time.deltaTime);
-        else if (goingDown)
-            rb2d.velocity = new Vector2(0, -moveSpeed * Time.deltaTime);
+        if (verticalMovement != 0)
+            rb2d.velocity = verticalVelocity;
         else
             rb2d.velocity = new Vector2(0, 0);
     }
